@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# Generater for Rails 4
+
+ENGINE_ROOT = File.expand_path('..', __dir__)
+ENGINE_PATH = File.expand_path('../lib/redmine_mautic/engine', __dir__)
+
+# Set up gems listed in the gems.rb.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../gems.rb', __dir__)
+require 'bundler/setup' if File.exist?(ENV['BUNDLE_GEMFILE'])
+
+require 'rails/all'
+require 'rails/engine/commands'

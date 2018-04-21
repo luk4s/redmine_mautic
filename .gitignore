@@ -1,0 +1,11 @@
+*.log
+.yardoc
+gems.locked
+gems.dependencies.rb
+.bundle/
+.idea/
+pkg/
+test/
+spec/dummy/
+coverage/
+doc/

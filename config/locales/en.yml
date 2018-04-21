@@ -1,0 +1,4 @@
+en:
+  redmine_mautic:
+    plugin_name: "RedmineMautic"
+    label_new_connection: New connection

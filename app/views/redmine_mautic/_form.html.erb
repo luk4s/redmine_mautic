@@ -1,0 +1,32 @@
+<%= error_messages_for form.object %>
+
+<div class="box tabular">
+  <p class="field">
+    <%= form.select :type, %w(Mautic::Connections::Oauth2) %>
+  </p>
+
+  <p class="field">
+    <%= form.text_field :url, label: form.object.class.human_attribute_name(:url), placeholder: 'https://mautic.org', required: true %>
+  </p>
+</div>
+<div class="box tabular">
+  <% unless form.object.new_record? %>
+    <p class="field">
+      <label>Callback url</label>
+      <%= Setting.protocol %>://<%= Setting.host_name %>/mautic/connections/<%= (form.object.id || Mautic::Connection.last.id.next) %>/oauth2
+      <em class="info">Now generate pair of tokens with this callback url</em>
+    </p>
+    <p class="field settings">
+      <%= form.text_field :client_id, label: form.object.class.human_attribute_name(:client_id), size: 50 %>
+    </p>
+
+    <p class="field">
+      <%= form.text_field :secret, label: form.object.class.human_attribute_name(:secret), size: 50 %>
+    </p>
+
+  <% end %>
+
+  <p class="actions">
+    <%= form.submit %>
+  </p>
+</div>

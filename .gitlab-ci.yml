@@ -1,0 +1,49 @@
+before_script:
+  - export HOME=/home/gitlab-runner
+  - export LC_ALL=en_US.UTF-8
+  - export RAILS_ENV=test
+  - ''
+  - '[[ -z $RUBY_VERSION ]] && RUBY_VERSION="2.4.2"'
+  - ''
+  - rvm use ruby $RUBY_VERSION >/dev/null 2>&1
+  - ruby -v
+  - ''
+  - bundle install
+
+variables:
+  REPO: easyredmine/stable-2016
+
+stages:
+  - me
+  - ryses
+  - easyproject
+
+# -----------------------------------------------------------------------------
+# Stage: Me
+
+Me / MySQL:
+  stage: me
+  tags:
+  - gantt
+  script:
+  - bin/easy_core ci-run-easy --mysql --test me
+
+# -----------------------------------------------------------------------------
+# Stage: Ryses
+
+Ryses / MySQL:
+  stage: ryses
+  tags:
+  - gantt
+  script:
+  - bin/easy_core ci-run-easy --mysql --test ryses
+
+# -----------------------------------------------------------------------------
+# Stage: Easyproject
+
+Easyproject / MySQL:
+  stage: easyproject
+  tags:
+  - gantt
+  script:
+  - bin/easy_core ci-run-easy --mysql --test easyproject

@@ -1,0 +1,37 @@
+<div class="contextual">
+  <%= link_to l("redmine_mautic.label_new_connection"), new_redmine_mautic_path, class: 'icon icon-add' %>
+</div>
+<h1>Mautic Connections</h1>
+<% if @mautic_connections.any? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Client</th>
+        <th>Secret</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @mautic_connections.each do |mautic_connection| %>
+        <tr id="<%= dom_id mautic_connection %>">
+          <td><%= mautic_connection.url %></td>
+          <td><%= mautic_connection.client_id %></td>
+          <td><%= mautic_connection.secret %></td>
+          <td class="buttons">
+            <%= link_to l(:button_edit), edit_redmine_mautic_path(mautic_connection), class: 'icon icon-edit' %>
+            <%= link_to l(:button_delete), redmine_mautic_path(mautic_connection), method: :delete, data: { confirm: l(:text_are_you_sure), rmeote: true }, class: 'icon icon-del' %>
+            <% if mautic_connection.refresh_token.blank? %>
+              <%= link_to('Authorize', mautic.authorize_connection_path(mautic_connection), class: 'icon icon-server-authentication', target: '_blank') %>
+            <% else %>
+              <%= link_to('re-Authorize', mautic.authorize_connection_path(mautic_connection), class: 'icon icon-reload', target: '_blank') %>
+            <% end %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <p class="nodata"><%= l :label_no_data %></p>
+  <% end %>

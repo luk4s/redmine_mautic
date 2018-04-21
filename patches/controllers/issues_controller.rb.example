@@ -1,0 +1,37 @@
+Rys::Patcher.add('IssuesController') do
+
+  included do
+    before_action :redmine_mautic_add_flash_notice, only: [:show]
+  end
+
+  instance_methods do
+    def show
+      Rys::Feature.on('redmine_mautic.issue.show') do
+        @redmine_mautic_test_1 = 'Test 2'
+      end
+
+      super
+    end
+
+    private
+
+      def redmine_mautic_add_flash_notice
+        if Rys::Feature.active?('redmine_mautic.issue.show', 'redmine_mautic.project.show')
+          flash.now[:notice] = 'Features are activated'
+        end
+      end
+  end
+
+
+  instance_methods(feature: 'redmine_mautic.issue.show') do
+    def show
+      @redmine_mautic_test_2 = 'Test 2'
+
+      super
+    end
+  end
+
+  class_methods do
+  end
+
+end

@@ -1,0 +1,8 @@
+<div class="contextual">
+  <%= link_to l(:button_back), redmine_mautic_index_path %>
+</div>
+
+<h1>New connection</h1>
+<%= labelled_form_for(@mautic_connection, as: :connection, url: :redmine_mautic_index) do |form| %>
+<%= render 'form', form: form %>
+<% end %>
