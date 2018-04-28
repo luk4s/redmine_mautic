@@ -1,0 +1,1 @@
+Mautic.config.base_url = ->(_) { "#{Setting.protocol}://#{Setting.host_name}" }
