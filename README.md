@@ -2,7 +2,7 @@
 
 This [redmine](https://github.com/redmine/redmine) feature allow to simply create new connection to your mautic for API integration
 
-## Installation
+## Installation
 
 Add to your gemfile
 
@@ -17,7 +17,7 @@ And of course migrations
 
     rake db:migrate
     
-## Usage
+## Usage
 
 Connections list are manage on address `/redmine_mautic`.
 
