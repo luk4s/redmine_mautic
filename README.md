@@ -1,6 +1,6 @@
 # Redmine interface for mautic rails gem
 
-This [redmine](/redmine/redmine) feature allow to simply create new connection to your mautic for API integration
+This [redmine](https://github.com/redmine/redmine) feature allow to simply create new connection to your mautic for API integration
 
 ## Installation
 
@@ -30,7 +30,7 @@ Add new connection in 3+1 steps:
 
 ## Development
 
-For development [ryspec](/easysoftware/ryspec) plugin is recommended
+For development [ryspec](https://github.com/easysoftware/ryspec) plugin is recommended
 
     gem 'ryspec', github: "easysoftware/ryspec"
 
