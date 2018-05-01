@@ -1,5 +1,5 @@
 require 'bundler'
-
+require 'webmock/rspec'
 spec = Bundler.load.specs.find{|s| s.name.to_s == 'ryspec' }
 
 if !spec

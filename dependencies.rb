@@ -11,12 +11,6 @@ group :rys do
   end
 
   group :test do
-    gem 'webmock'
-    gem 'factory_bot_rails'
-    gem 'rspec-rails'
-    gem 'poltergeist'
-    gem 'database_cleaner', '~> 1.6.1'
-    gem 'capybara'
-#    gem "selenium-webdriver"
+    gem 'webmock', '3.4.0'
   end
 end
