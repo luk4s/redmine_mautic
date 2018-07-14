@@ -17,3 +17,4 @@ Plugin.hook('rys-gemfile', self)
 #   2. Environment variable DUMMY_PATH
 #   3. Current_dir / test / dummy
 Plugin.hook('rys-load-dummy', self)
+gem "mautic", path: "/Users/lukas/_projects/mautic"

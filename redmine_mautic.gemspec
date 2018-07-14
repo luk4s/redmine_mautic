@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*', 'spec/**/*']
 
   s.add_dependency 'rys'
-  s.add_dependency 'mautic', '~> 0.1.6'
+  s.add_dependency 'mautic', '~> 2.0'
 end

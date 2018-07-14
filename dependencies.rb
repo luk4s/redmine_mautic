@@ -11,6 +11,5 @@ group :rys do
   end
 
   group :test do
-    gem 'webmock', '3.4.0'
   end
 end

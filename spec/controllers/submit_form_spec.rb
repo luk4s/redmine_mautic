@@ -28,12 +28,12 @@ RSpec.describe "Submit mautic form", type: :controller do
 
   it "like onboarding" do
     stub = stub_request(:post, "https://mautic.org/form/submit").
-      with(body: { 'mauticform' => hash_including({ 'mail' => user[:mail],
+      with(body: ({ 'mauticform' => hash_including({ 'mail' => user[:mail],
                                                     'firstname' => user[:firstname],
                                                     'lastname' => user[:lastname],
                                                     'ep_language' => user[:language],
                                                     'submit' => '1',
-                                                    'formId' => '6' }) })
+                                                    'formId' => '6' }) }))
     
     post :create, { user: user }
     expect(stub).to have_been_requested
