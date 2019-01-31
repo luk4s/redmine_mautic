@@ -35,7 +35,7 @@ RSpec.describe "Submit mautic form", type: :controller do
                                                     'submit' => '1',
                                                     'formId' => '6' }) }))
     
-    post :create, { user: user }
+    post :create, params: { user: user }
     expect(stub).to have_been_requested
   end
 
