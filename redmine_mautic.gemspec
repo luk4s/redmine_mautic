@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/luk4s'
   s.summary     = 'Integration mautic rails gem with Redmine'
   s.description = 'https://github.com/luk4s/mautic-rails'
-  s.license     = 'GNU/GPL 2'
+  s.license     = 'GPL-2.0-or-later'
 
   s.files = Dir['{app,config,db,lib,patches}/**/{*,.*}', 'Rakefile', 'README.md', 'gems.rb']
   s.test_files = Dir['test/**/*', 'spec/**/*']
