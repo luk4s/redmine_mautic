@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license     = 'GPL-2.0-or-later'
 
   s.files = Dir['{app,config,db,lib,patches}/**/{*,.*}', 'Rakefile', 'README.md', 'gems.rb']
-  s.test_files = Dir['test/**/*', 'spec/**/*']
+  s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rys'
   s.add_dependency 'mautic', '~> 2.0'
