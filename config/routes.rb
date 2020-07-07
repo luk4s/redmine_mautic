@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   # end
 
   rys_feature 'redmine_mautic' do
-    mount Mautic::Engine => '/mautic'
-    resources :redmine_mautic
+    resources :redmine_mautic do
+      member do
+        get :authorize
+        get :oauth2
+      end
+    end
   end
 
   # get '/redmine_mautic', to: 'redmine_mautic#index'

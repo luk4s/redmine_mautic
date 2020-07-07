@@ -13,7 +13,7 @@
   <% unless form.object.new_record? %>
     <p class="field">
       <label>Callback url</label>
-      <%= Setting.protocol %>://<%= Setting.host_name %>/mautic/connections/<%= (form.object.id || Mautic::Connection.last.id.next) %>/oauth2
+      <%= @mautic_connection.send :callback_url, controller %>
       <em class="info">Now generate pair of tokens with this callback url</em>
     </p>
     <p class="field settings">

@@ -12,13 +12,16 @@ Gem::Specification.new do |s|
   s.description = 'https://github.com/luk4s/mautic-rails'
   s.license     = 'GPL-2.0-or-later'
 
+  s.metadata['allowed_push_host'] = 'https://rubygems.org'
+
   s.files = Dir['{app,config,db,lib,patches}/**/{*,.*}', 'Rakefile', 'README.md', 'gems.rb']
   s.test_files = Dir['spec/**/*']
+
 
 #  s.add_dependency 'rys' # https://github.com/easysoftware/rys
   s.add_dependency 'redmine_extensions'
 
-  s.add_dependency 'mautic', '~> 2.0'
+  s.add_dependency 'mautic', '~> 2.3', '>= 2.3.9'
 
   # s.add_development_dependency 'ryspec', '>=0.2.2' # https://github.com/easysoftware/ryspec
 

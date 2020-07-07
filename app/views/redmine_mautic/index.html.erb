@@ -23,9 +23,9 @@
             <%= link_to l(:button_edit), edit_redmine_mautic_path(mautic_connection), class: 'icon icon-edit' %>
             <%= link_to l(:button_delete), redmine_mautic_path(mautic_connection), method: :delete, data: { confirm: l(:text_are_you_sure), rmeote: true }, class: 'icon icon-del' %>
             <% if mautic_connection.refresh_token.blank? %>
-              <%= link_to('Authorize', mautic.authorize_connection_path(mautic_connection), class: 'icon icon-server-authentication', target: '_blank') %>
+              <%= link_to('Authorize', authorize_redmine_mautic_path(mautic_connection), class: 'icon icon-server-authentication', target: '_blank') %>
             <% else %>
-              <%= link_to('re-Authorize', mautic.authorize_connection_path(mautic_connection), class: 'icon icon-reload', target: '_blank') %>
+              <%= link_to('re-Authorize', authorize_redmine_mautic_path(mautic_connection), class: 'icon icon-reload', target: '_blank') %>
             <% end %>
             </td>
         </tr>

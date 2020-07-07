@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://gems.easysoftware.com'
 
 # Possible directories for dummy application
 possible_app_dirs = [
@@ -19,11 +18,11 @@ possible_app_dirs.each do |dir|
   %w[Gemfile gems.rb].each do |gems_rb|
     gems_rb = File.expand_path(File.join(dir, gems_rb))
 
-    next unless File.exist?(gems_rb)
-
-    eval_gemfile(gems_rb)
-    gems_rb_found = true
-    break
+    if File.exist?(gems_rb)
+      eval_gemfile(gems_rb)
+      gems_rb_found = true
+      break
+    end
   end
 end
 
@@ -42,7 +41,8 @@ end
 # Dummy application may already include this gem
 # You cannot specify the same gem twice
 current_gem_spec = Bundler.load_gemspec(gemspec_file)
-@dependencies.delete_if {|d| d.name == current_gem_spec.name }
+@dependencies.delete_if { |d| d.name == current_gem_spec.name }
 
 # Load current gem and its dependencies
 gemspec
+gem "rys", github: "easysoftware/rys", branch: "devel"
